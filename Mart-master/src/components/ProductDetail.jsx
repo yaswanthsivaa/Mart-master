@@ -642,7 +642,7 @@ export default function ProductDetail() {
         closeOnClick
         rtl={false}
       />
-       <div
+      <div
         id="ctn"
         className="d-flex justify-content-center align-items-center text-white"
         style={{
@@ -701,7 +701,7 @@ export default function ProductDetail() {
 
               </div>
               <button
-                className="btn mt-3" style={{backgroundColor:'rgb(0,71,171)',color:'white'}}
+                className="btn mt-3" style={{ backgroundColor: 'rgb(0,71,171)', color: 'white' }}
                 onClick={() => addtocart(product.id)}
               >
                 Add to Cart
@@ -732,73 +732,73 @@ export default function ProductDetail() {
         </div>
         {/* Content */}
         <div className="">
-  <div className="row">
-    <div className="col-12 col-md-10 col-lg-8">
-      {activeTab === "description" ? (
-        <div className="p-3 bg-light rounded shadow-sm">
-          <h3 className="mb-3">Product Description</h3>
-          <p className="text-muted">{product.description}</p>
+          <div className="row">
+            <div className="col-12 col-md-10 col-lg-8">
+              {activeTab === "description" ? (
+                <div className="p-3 bg-light rounded shadow-sm">
+                  <h3 className="mb-3">Product Description</h3>
+                  <p className="text-muted">{product.description}</p>
+                </div>
+              ) : (
+                <div className="p-3 bg-light rounded shadow-sm">
+                  <h3 className="mb-3">Product Reviews</h3>
+                  {product.reviews && product.reviews.length > 0 ? (
+                    product.reviews.map((review) => (
+                      <div key={review.id} className="mb-3 p-3 border rounded">
+                        <div className="fw-bold">John Doe</div>
+                        <div className="text-warning">{review.rating} (ratings)</div>
+                        <div>{review.text}</div>
+                      </div>
+                    ))
+                  ) : (
+                    <p className="text-muted">No reviews available.</p>
+                  )}
+                </div>
+              )}
+            </div>
+          </div>
         </div>
-      ) : (
-        <div className="p-3 bg-light rounded shadow-sm">
-          <h3 className="mb-3">Product Reviews</h3>
-          {product.reviews && product.reviews.length > 0 ? (
-            product.reviews.map((review) => (
-              <div key={review.id} className="mb-3 p-3 border rounded">
-                <div className="fw-bold">John Doe</div>
-                <div className="text-warning">{review.rating} (ratings)</div>
-                <div>{review.text}</div>
-              </div>
-            ))
-          ) : (
-            <p className="text-muted">No reviews available.</p>
-          )}
-        </div>
-      )}
-    </div>
-  </div>
-</div>
       </div>
       {/* Related Products Section */}
       <div>
         <h2 className="mb-4 text-center">You might also like</h2>
         <div className="row g-4 justify-content-center">
-  {products
-    .filter((item) => item.category === product.category && item.id !== product.id)
-    .map((relatedProduct, index) => (
-      <div
-        key={index}
-        className="col-12 col-sm-6 col-md-4 col-lg-3"
-      >
-        <div className="card h-100">
-          <img
-            src={relatedProduct.imgUrl}
-            alt={relatedProduct.productName}
-            className="card-img-top"
-            style={{ height: '150px', objectFit: 'contain' }}
-          />
-          <div className="card-body text-center">
-            <h5 className="card-title">{relatedProduct.productName.slice(0, 20)}</h5>
-            <div>
-              {[...Array(5)].map((_, index) => (
-                <i key={index} className="fas fa-star" style={{ color: 'gold' }}></i>
-              ))}
-            </div>
-            <div className="d-flex justify-content-between align-items-center mt-2">
-              <h4 className="card-text mb-0">${relatedProduct.price}</h4>
-              <button
-                id="plus-icon"
-                className="btn rounded-circle"
-                onClick={() => addtocart(relatedProduct.id)}
+          {products
+            .filter((item) => item.category === product.category && item.id !== product.id)
+            .map((relatedProduct, index) => (
+              <div
+                key={index}
+                className="col-12 col-sm-6 col-md-4 col-lg-3"
               >
-                <i className="fas fa-plus"></i>
-              </button>
-            </div>
-          </div>
+                <div className="card h-90">
+                  <img
+                    src={relatedProduct.imgUrl}
+                    alt={relatedProduct.productName}
+                    className="card-img-top"
+                    style={{ height: '150px', objectFit: 'contain' }}
+                  />
+                  <div className="card-body text-center">
+                    <h5 className="card-title">{relatedProduct.productName.slice(0, 20)}</h5>
+                    <div>
+                      {[...Array(5)].map((_, index) => (
+                        <i key={index} className="fas fa-star" style={{ color: 'gold' }}></i>
+                      ))}
+                    </div>
+                    <div className="d-flex justify-content-between align-items-center mt-2">
+                      <h4 className="card-text mb-0">${relatedProduct.price}</h4>
+                      <button
+                        id="plus-icon"
+                        className="btn rounded-circle"
+                        onClick={() => addtocart(relatedProduct.id)}
+                      >
+                        <i className="fas fa-plus"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
         </div>
-      </div>
-    ))}
-</div>
 
       </div>
     </div>
