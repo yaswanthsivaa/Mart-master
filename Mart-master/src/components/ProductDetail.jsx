@@ -725,7 +725,7 @@ export default function ProductDetail() {
             onClick={() => handleClick("reviews")}
             className={`pb-2 ${activeTab === "reviews" ? "text-dark fw-bold border-bottom border-3" : "text-muted"
               }`}
-            style={{ cursor: "text" }}
+            style={{ cursor: "pointer" }}
           >
             Reviews({product.reviews.length})
           </span>
