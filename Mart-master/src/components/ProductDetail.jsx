@@ -701,7 +701,7 @@ export default function ProductDetail() {
 
               </div>
               <button
-                className="btn mt-3" style={{backgroundColor:'rgb(0,71,171)',color:'white'}}
+                className="btn mt-4" style={{backgroundColor:'rgb(0,71,171)',color:'white'}}
                 onClick={() => addtocart(product.id)}
               >
                 Add to Cart
