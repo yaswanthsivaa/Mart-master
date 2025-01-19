@@ -751,7 +751,7 @@ export default function ProductDetail() {
                       </div>
                     ))
                   ) : (
-                    <p className="text-muted">No reviews available.</p>
+                    <p className="text-muted">reviews available.</p>
                   )}
                 </div>
               )}
