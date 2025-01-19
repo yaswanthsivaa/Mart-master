@@ -690,7 +690,7 @@ export default function ProductDetail() {
                 <strong>Ratings:</strong> {product.reviews[0]?.rating || 'N/A'} ratings
               </p>
               {/* Quantity Input and Add to Cart Button */}
-              <div className="d-flex align-items-center">
+              <div className="d-flex align-items-end">
                 <input
                   type="number"
                   className="form-control me-3"
