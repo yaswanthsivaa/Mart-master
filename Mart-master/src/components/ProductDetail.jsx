@@ -770,7 +770,7 @@ export default function ProductDetail() {
                 key={index}
                 className="col-12 col-sm-6 col-md-4 col-lg-3"
               >
-                <div className="card h-90">
+                <div className="card h-100">
                   <img
                     src={relatedProduct.imgUrl}
                     alt={relatedProduct.productName}
