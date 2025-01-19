@@ -684,7 +684,7 @@ export default function ProductDetail() {
                 <strong>Category:</strong> {product.category}
               </p>
               <p className="card-text">
-                <strong>Price</strong> ${product.price}
+                <strong>Price:</strong> ${product.price}
               </p>
               <p className="card-text">
                 <strong>Ratings:</strong> {product.reviews[0]?.rating || 'N/A'} ratings
