@@ -632,7 +632,6 @@ export default function ProductDetail() {
     ]
     )
   }, [setProducts])
-
   return (
     <div className="container-fluid py-4" style={{ marginTop: '20px' }}>
       <ToastContainer
@@ -643,7 +642,6 @@ export default function ProductDetail() {
         closeOnClick
         rtl={false}
       />
-
        <div
         id="ctn"
         className="d-flex justify-content-center align-items-center text-white"
