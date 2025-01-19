@@ -761,7 +761,7 @@ export default function ProductDetail() {
       </div>
       {/* Related Products Section */}
       <div>
-        <h2 className="mb-4 text-center">You might like</h2>
+        <h2 className="mb-4 text-center">You might also like</h2>
         <div className="row g-4 justify-content-center">
           {products
             .filter((item) => item.category === product.category && item.id !== product.id)
