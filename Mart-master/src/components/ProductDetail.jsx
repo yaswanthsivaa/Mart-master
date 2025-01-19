@@ -715,7 +715,7 @@ export default function ProductDetail() {
         <div className="d-flex justify-content-start mb-3 border-bottom">
           <span
             onClick={() => handleClick("description")}
-            className={`me-4 pb-2 ${activeTab === "description" ? "text-dark fw-bold border-bottom border-3" : "text-muted"
+            className={`me-5 pb-2 ${activeTab === "description" ? "text-dark fw-bold border-bottom border-3" : "text-muted"
               }`}
             style={{ cursor: "pointer" }}
           >
