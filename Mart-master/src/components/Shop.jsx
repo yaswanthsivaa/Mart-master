@@ -662,7 +662,6 @@ export default function Shop() {
         <h1 style={{ color: 'white' }}>Product</h1>
       </div>
 
-      {/* Filter Section */}
       <div className="row mb-4">
         <div
           className="col-12 col-md-6 mb-3"
@@ -693,7 +692,6 @@ export default function Shop() {
               <option value="wireless">Wireless</option>
               <option value="chair">Chair</option>
             </select>
-            {/* Custom Icon */}
             <i
               className="fa fa-chevron-down"
               style={{
@@ -750,7 +748,6 @@ export default function Shop() {
         </div>
       </div>
 
-      {/* Product Cards Section */}
       <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4">
         {filteredProducts.map((product, index) => (
           <Link
@@ -780,7 +777,6 @@ export default function Shop() {
                   </div>
                   <div className="d-flex justify-content-between align-items-center mt-2">
                     <h4 className="card-text mb-0">${product.price}</h4>
-                    {/* Add "Add to Cart" Button or Other Action */}
                   </div>
                 </div>
               </div>

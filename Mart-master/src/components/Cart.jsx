@@ -45,7 +45,6 @@ export default function Cartpage() {
                     </div>
                   </div>
 
-                  {/* Column for remove icon and increment/decrement buttons */}
                   <div className="d-flex flex-column align-items-end">
                     <i
                       className="fas fa-times text-dark mb-2"
