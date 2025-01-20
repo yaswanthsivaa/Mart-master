@@ -1,6 +1,6 @@
-import React, { useContext, useEffect} from 'react';
-import { AppContext} from './App';
-import { ToastContainer} from 'react-toastify';
+import React, { useContext, useEffect } from 'react';
+import { AppContext } from './App';
+import { ToastContainer } from 'react-toastify';
 import productImg01 from "../Images/double-sofa-01.png";
 import productImg02 from "../Images/double-sofa-02.png";
 import productImg03 from "../Images/double-sofa-03.png";
@@ -824,6 +824,14 @@ export default function Productpage() {
   }, [])
   return (
     <div className="container-fluid px-0 mt-5">
+      <ToastContainer
+        position="top-right"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+      />
       {/* Carousel Section */}
       <div
         id="carouselExampleIndicators"
@@ -850,7 +858,7 @@ export default function Productpage() {
               key={slide.id}
               className={`carousel-item ${index === 0 ? 'active' : ''}`}
             >
-              <div className="container d-flex align-items-center justify-content-center flex-column flex-lg-row">
+              <div className="container d-flex justify-items-center align-items-center justify-content-center flex-column flex-lg-row">
                 <div className="text-container text-center text-lg-start mb-3 mb-lg-0">
                   <h1 className="display-4">{slide.title}</h1>
                   <p className="lead">{slide.desc}</p>
@@ -882,7 +890,7 @@ export default function Productpage() {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
-  
+
       {/* Services Section */}
       <div className="row gy-4 mt-4">
         {serviceData.map((service, index) => (
@@ -903,7 +911,7 @@ export default function Productpage() {
           </div>
         ))}
       </div>
-  
+
       {/* Big Discount Section */}
       <div className="container mt-4">
         <div className="row gy-4">
@@ -946,7 +954,7 @@ export default function Productpage() {
                   <div className="d-flex justify-content-between align-items-center mt-2">
                     <h4 className="card-text mb-0">${product.price}</h4>
                     <button
-                      className="btn rounded-circle"
+                      className="btn rounded-circle" id='plus-icon'
                       onClick={() => addtocart(product.id)}
                     >
                       <i className="fas fa-plus"></i>
@@ -957,7 +965,7 @@ export default function Productpage() {
             </div>
           ))}
         </div>
-  
+
         {/* New Arrivals Section */}
         <div className="row gy-4 mt-4">
           <h1 className="text-center w-100">New Arrivals</h1>
@@ -990,7 +998,7 @@ export default function Productpage() {
                     <div className="d-flex justify-content-between align-items-center mt-2">
                       <h4 className="card-text mb-0">${product.price}</h4>
                       <button
-                        className="btn rounded-circle"
+                        className="btn rounded-circle" id='plus-icon'
                         onClick={() => addtocart(product.id)}
                       >
                         <i className="fas fa-plus"></i>
@@ -1001,7 +1009,7 @@ export default function Productpage() {
               </div>
             ))}
         </div>
-  
+
         {/* Best Sales Section */}
         <div className="row gy-4 mt-4">
           <h1 className="text-center w-100">Best Sales</h1>
@@ -1034,7 +1042,7 @@ export default function Productpage() {
                     <div className="d-flex justify-content-between align-items-center mt-2">
                       <h4 className="card-text mb-0">${product.price}</h4>
                       <button
-                        className="btn rounded-circle"
+                        className="btn rounded-circle" id='plus-icon'
                         onClick={() => addtocart(product.id)}
                       >
                         <i className="fas fa-plus"></i>

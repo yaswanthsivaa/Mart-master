@@ -48,7 +48,6 @@ export default function Shop() {
   }
   const filteredProducts = products
     .filter((product) => product.productName.toLowerCase().includes(search) && product.category === change)
-  // .filter((product)=>product.category==change)
   useEffect(() => {
     setProducts([
       {
@@ -669,26 +668,45 @@ export default function Shop() {
           className="col-12 col-md-6 mb-3"
           style={{ width: 'fit-content', marginLeft: '110px' }}
         >
-          <select
-            onClick={handleChange}
-            className="form-select"
-            id="product-filter"
-            style={{
-              backgroundColor: 'rgb(0, 0, 139)',  // Background color
-              color: 'white',  
-              paddingRight: '30px',  // Space for custom arrow
-              border: '1px solid #ccc',  // Optional border for styling
-              fontSize: '16px',  // Font size
-             
-            }}
-          >
-            <option value="sofa">Filter by Category |</option>
-            <option value="sofa">Sofa</option>
-            <option value="mobile">Mobile</option>
-            <option value="watch">Watch</option>
-            <option value="wireless">Wireless</option>
-            <option value="chair">Chair</option>
-          </select>
+          <div style={{ position: 'relative', width: '200px' }}>
+            <select
+              onClick={handleChange}
+              className="form-select"
+
+              id="product-filter"
+              style={{
+                backgroundColor: 'rgb(0, 0, 139)', 
+                color: 'white',
+                paddingRight: '40px', 
+                border: '1px solid #ccc', 
+                fontSize: '16px',
+                appearance: 'none', 
+                WebkitAppearance: 'none', 
+                MozAppearance: 'none',
+                outline: 'none',
+              }}
+            >
+              <option value="sofa">Filter by Category |</option>
+              <option value="sofa">Sofa</option>
+              <option value="mobile">Mobile</option>
+              <option value="watch">Watch</option>
+              <option value="wireless">Wireless</option>
+              <option value="chair">Chair</option>
+            </select>
+            {/* Custom Icon */}
+            <i
+              className="fa fa-chevron-down"
+              style={{
+                position: 'absolute',
+                top: '50%',
+                right: '10px',
+                transform: 'translateY(-50%)',
+                pointerEvents: 'none', 
+                color: 'white',
+              }}
+            ></i>
+          </div>
+
 
 
         </div>
@@ -701,25 +719,34 @@ export default function Shop() {
               placeholder="Search products"
               style={{
                 borderRadius: '50px',
-                paddingLeft: '30px', 
-                paddingRight: '30px', 
+                paddingLeft: '30px',
+                paddingRight: '40px',  
+                border: '1px solid #ccc',
+                outline: 'none',  
               }}
+              onFocus={(e) => {
+                e.target.style.boxShadow = 'none'; 
+              }}
+            
             />
             <span
               className="input-group-text"
               style={{
                 position: 'absolute',
-                right: '10px', // Position the icon inside the input field on the right
+                right: '10px', 
                 top: '50%',
                 transform: 'translateY(-50%)',
                 background: 'none',
                 borderRadius: '25px',
                 border: 'none',
+                pointerEvents: 'none', 
               }}
             >
               <FontAwesomeIcon icon={faMagnifyingGlass} />
             </span>
           </div>
+
+
         </div>
       </div>
 
